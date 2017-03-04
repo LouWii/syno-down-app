@@ -1,0 +1,15 @@
+.app-bar {
+  background: #247093;
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.app-bar h2 {
+  margin: 5px 0 10px 10px;
+  font-weight: 200;
+  font-size: 22px;
+}
+
+.main-container {
+  margin-bottom: 15px;
+}
