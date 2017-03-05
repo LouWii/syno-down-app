@@ -30,6 +30,6 @@ nt=${profile.login}&passwd=${profile.password}&session=DownloadStation&format=co
 
 export function synoDSListQuery(profile) {
   let url = generateRootQuery(profile)
-  url += '/DownloadStation/task.cgi?api=SYNO.DownloadStation.Task&version=1&method=list'
+  url += '/DownloadStation/task.cgi?api=SYNO.DownloadStation.Task&version=1&method=list&additional=detail,file'
   return url
 }
