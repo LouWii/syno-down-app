@@ -15,7 +15,7 @@ class Task extends React.Component {
           {this.props.task.status}
         </div>
         <div className="task-detail task-size">
-          {this.props.task.size}
+          {fileSizeSI(this.props.task.size)}
         </div>
       </div>
     )
