@@ -9,5 +9,9 @@
 
 .table-style .task-detail {
   display: table-cell;
-  padding: 10px 0;
+  padding: 10px 5px;
+}
+
+.task-size {
+  min-width: 80px;
 }
