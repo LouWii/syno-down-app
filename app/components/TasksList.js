@@ -1,5 +1,6 @@
 import React from 'react';
 import Task from './Task'
+import '../styles/TasksList.global.css'
 
 class TasksList extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class TasksList extends React.Component {
 
   render() {
     return (
-      <div className="tasks-list">
+      <div className="tasks-list table-style">
         {this.props.tasks.map((task, idx) => <Task key={idx} task={task} idx={idx} />)}
       </div>
     )

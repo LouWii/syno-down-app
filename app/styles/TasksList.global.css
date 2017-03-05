@@ -1,0 +1,4 @@
+.tasks-list.table-style {
+  display: table;
+  border-collapse: collapse;
+}

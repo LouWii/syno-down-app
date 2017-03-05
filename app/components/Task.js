@@ -1,4 +1,6 @@
 import React from 'react';
+import { fileSizeSI } from '../utils/utils'
+import '../styles/Task.global.css'
 
 class Task extends React.Component {
   constructor(props) {

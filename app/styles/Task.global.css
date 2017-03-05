@@ -1,0 +1,13 @@
+.table-style .task {
+  display: table-row;
+  border-bottom: 1px solid #ccc;
+}
+
+.table-style .task:hover {
+  background: rgba(0, 0, 0, .02)
+}
+
+.table-style .task-detail {
+  display: table-cell;
+  padding: 10px 0;
+}
