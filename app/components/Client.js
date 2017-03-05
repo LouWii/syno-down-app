@@ -18,6 +18,11 @@ class Client extends React.Component {
     return (
       <div className="client">
         <h2>{this.state.profile.name}</h2>
+        {this.props.clients.clientIsLoading &&
+          <div className="loading-container">
+            <h3>Loading</h3>
+          </div>
+        }
         <TasksList tasks={this.props.tasks} />
       </div>
     )

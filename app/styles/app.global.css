@@ -10,3 +10,8 @@ body {
   max-width: 600px;
   margin: 0 auto;
 }
+
+.loading-container {
+  background: rgba(23, 23, 23, .4);
+  text-align: center;
+}
