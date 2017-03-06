@@ -1,5 +1,6 @@
 import React from 'react';
 import { fileSizeSI } from '../utils/utils'
+import StatusIcon from './StatusIcon'
 import '../styles/Task.global.css'
 
 class Task extends React.Component {
@@ -10,12 +11,15 @@ class Task extends React.Component {
   render() {
     return (
       <div className="task">
+        <div className="task-detail task-icon">
+          <StatusIcon status={this.props.task.status} />
+        </div>
         <div className="task-detail task-title">
           {this.props.task.title}
         </div>
-        <div className="task-detail task-status">
+        {/*<div className="task-detail task-status">
           {this.props.task.status}
-        </div>
+        </div>*/}
         <div className="task-detail task-size">
           {fileSizeSI(this.props.task.size)}
         </div>
