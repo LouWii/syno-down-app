@@ -1,7 +1,7 @@
 /**
  * Converts a size from bytes to human readable size
  * kB,MB,GB,TB,PB,EB,ZB,YB
- *
+ * from http://stackoverflow.com/a/20463021/1740412
  * @export
  * @param {any} a
  * @param {any} b
