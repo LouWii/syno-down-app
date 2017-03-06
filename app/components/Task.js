@@ -22,21 +22,22 @@ class Task extends React.Component {
     }
     return (
       <div className="task">
-        <div className="task-detail task-icon">
+        <div className="task-info task-icon">
           <StatusIcon status={this.props.task.status} />
         </div>
-        <div className="task-detail task-title">
+        <div className="task-info task-title">
           {this.props.task.title}
         </div>
-        {/*<div className="task-detail task-status">
+        {/*<div className="task-info task-status">
           {this.props.task.status}
         </div>*/}
-        <div className="task-detail task-progress">
+        <div className="task-info task-progress">
           {progress.toFixed(2)} %
         </div>
-        <div className="task-detail task-size">
+        <div className="task-info task-size">
           {currentSize} / {totalSize}
         </div>
+
       </div>
     )
   }

@@ -7,7 +7,7 @@
   background: rgba(0, 0, 0, .02)
 }
 
-.table-style .task-detail {
+.table-style .task-info {
   display: table-cell;
   padding: 10px 5px;
 }
