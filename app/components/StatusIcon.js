@@ -1,9 +1,10 @@
 import React from 'react';
+import { capitalize } from '../utils/utils'
 // import '../styles/StatusIcon.global.css'
 
 class StatusIcon extends React.Component {
-  constructor(props) {
-    super(props)
+
+  render() {
     const statusToIcon = {
       'waiting': 'glyphicon glyphicon-hourglass',
       'downloading': 'glyphicon glyphicon-save',
@@ -17,16 +18,14 @@ class StatusIcon extends React.Component {
       'error': 'glyphicon glyphicon-alert',
       'other': 'glyphicon glyphicon-question-sign'
     }
+    let iconClass = ''
     if (statusToIcon[this.props.status]) {
-      this.setState({iconClass: statusToIcon[this.props.status]})
+      iconClass = statusToIcon[this.props.status]
     } else {
-      this.setState({iconClass: statusToIcon['other']})
+      iconClass = statusToIcon['other']
     }
-  }
-
-  render() {
     return (
-      <span className={this.state.iconClass} aria-hidden="true"></span>
+      <span className={iconClass} title={capitalize(this.props.status.replace('_', ' '))} aria-hidden="true"></span>
     )
   }
 }
