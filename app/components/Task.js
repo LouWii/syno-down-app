@@ -9,6 +9,17 @@ class Task extends React.Component {
   }
 
   render() {
+    let progress = '?'
+    let currentSize = '?'
+    const totalSize = fileSizeSI(this.props.task.size)
+    if (this.props.task.additional) {
+      if (this.props.task.additional.detail && this.props.task.additional.transfer) {
+        progress = this.props.task.additional.transfer.size_downloaded * 100 / this.props.task.size
+      }
+      if (this.props.task.additional.transfer) {
+        currentSize = fileSizeSI(this.props.task.additional.transfer.size_downloaded)
+      }
+    }
     return (
       <div className="task">
         <div className="task-detail task-icon">
@@ -20,8 +31,11 @@ class Task extends React.Component {
         {/*<div className="task-detail task-status">
           {this.props.task.status}
         </div>*/}
+        <div className="task-detail task-progress">
+          {progress.toFixed(2)} %
+        </div>
         <div className="task-detail task-size">
-          {fileSizeSI(this.props.task.size)}
+          {currentSize} / {totalSize}
         </div>
       </div>
     )

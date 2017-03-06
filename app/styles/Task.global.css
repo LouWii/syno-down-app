@@ -15,3 +15,7 @@
 .task-size {
   min-width: 80px;
 }
+
+.task-progress {
+  min-width: 78px;
+}
