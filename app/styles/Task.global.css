@@ -12,10 +12,70 @@
   padding: 10px 5px;
 }
 
+.card-style .task {
+  break-inside: avoid;
+  margin-bottom: 14px;
+  margin-top: 1px;
+  box-shadow: 0px 0px 1px #b1b1b1;
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.card-style .task .task-title {
+  word-break: break-all;
+  background: #f3f3f3;
+  padding: 2px 3px;
+  font-size: 16px;
+  
+}
+
+.task .task-title .glyphicon {
+  margin-right: 2px;
+}
+
+.task-progress-bar {
+  height: 3px;
+  background: #516390;
+}
+
+.task-content {
+  padding: 5px 10px;
+}
+
+.task-content.content-more {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-in-out;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.task.toggled .task-content.content-more {
+  max-height: 500px;
+  height: unset;
+  overflow: hidden;
+
+  
+}
+
 .task-size {
   min-width: 80px;
 }
 
 .task-progress {
   min-width: 78px;
+}
+
+.task-info-row.row {
+  margin: 0;
+}
+
+.task-info-row .task-info {
+  width: 50%;
+  float: left;
+}
+
+.task-info-row .task-info:nth-child(2) {
+  text-align: right;
 }

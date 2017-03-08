@@ -1,3 +1,20 @@
+.tasks-list.card-style {
+  width: 100%;
+  column-count: 2;
+  column-gap: 15px;
+}
+
+/*.tasks-list.card-style::before {
+  display: table;
+  content: " ";
+}
+
+.tasks-list.card-style::after {
+  clear: both;
+  display: table;
+  content: " ";
+}*/
+
 .tasks-list.table-style {
   display: table;
   border-collapse: collapse;
