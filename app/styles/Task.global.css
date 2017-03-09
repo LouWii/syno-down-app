@@ -46,16 +46,16 @@
 .task-content.content-more {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 1s ease-in-out;
+  transition: max-height .25s ease-in-out;
   padding-top: 0;
   padding-bottom: 0;
 }
 
 .task.toggled .task-content.content-more {
-  max-height: 500px;
+  max-height: 95px;
   height: unset;
   overflow: hidden;
-
+  transition: max-height .25s ease-in-out;
   
 }
 

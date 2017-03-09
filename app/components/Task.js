@@ -23,6 +23,11 @@ class Task extends React.Component {
     let finishedOn = ' - '
     let dlSpeed = '?'
     let upSpeed = '?'
+    let peers = '?'
+    let seeders = '?'
+    let leechers = '?'
+    let seeding = '?'
+    let destination = '?'
     if (this.props.task.additional) {
       if (this.props.task.additional.detail && this.props.task.additional.transfer) {
         progress = this.props.task.additional.transfer.size_downloaded * 100 / this.props.task.size
@@ -37,6 +42,15 @@ class Task extends React.Component {
         if (this.props.task.additional.detail.completed_time && this.props.task.additional.detail.completed_time !== 0) {
           finishedOn = new Date(this.props.task.additional.detail.completed_time*1000).toLocaleDateString() + ' ' + new Date(this.props.task.additional.detail.completed_time*1000).toLocaleTimeString()
         }
+        peers = this.props.task.additional.detail.connected_peers
+        seeders = this.props.task.additional.detail.connected_seeders
+        leechers = this.props.task.additional.detail.connected_leechers
+        destination = this.props.task.additional.detail.destination
+        const seedingTime = new Date(this.props.task.additional.detail.seedelapsed * 1000);
+        const hh = seedingTime.getUTCHours();
+        const mm = seedingTime.getUTCMinutes();
+        const ss = seedingTime.getSeconds();
+        seeding = hh + 'h ' + mm + 'm ' + ss + 's'
       }
     }
     if (style === 'table') {
@@ -95,6 +109,17 @@ class Task extends React.Component {
               <div className="task-info task-progress">
                 <strong>Progress</strong> {progress.toFixed(2)} %
               </div>
+              <div className="task-info task-peers">
+                <strong title="Peers">P</strong> {peers} &nbsp;<strong title="Seeders">S</strong> {seeders} &nbsp;<strong title="Leechers">L</strong> {leechers}
+              </div>
+            </div>
+            <div className="task-info-row row">
+              <div className="task-info task-seeding">
+                <strong>Seed time</strong> {seeding}
+              </div>
+            </div>
+            <div className="task-info-row">
+              <strong>Destination</strong> {destination}
             </div>
           </div>
         </div>
