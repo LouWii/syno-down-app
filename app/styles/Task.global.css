@@ -26,8 +26,8 @@
   word-break: break-all;
   background: #f3f3f3;
   padding: 2px 3px;
-  font-size: 16px;
-  
+  font-size: 17px;
+  font-weight: bold;
 }
 
 .task .task-title .glyphicon {

@@ -10,8 +10,18 @@ class TasksList extends React.Component {
   render() {
     const listClass = this.props.style === 'table' ? 'table-style' : 'card-style'
     return (
-      <div className={'tasks-list ' + listClass}>
-        {this.props.tasks.map((task, idx) => <Task key={idx} task={task} idx={idx} style={this.props.style} />)}
+      <div className="tasks-list">
+        <div className="tasks-list-actions">
+          <div className="tasks-list-filter">
+            
+          </div>
+          <div className="tasks-list-search">
+
+          </div>
+        </div>
+        <div className={'tasks-items ' + listClass}>
+          {this.props.tasks.map((task, idx) => <Task key={idx} task={task} idx={idx} style={this.props.style} />)}
+        </div>
       </div>
     )
   }
