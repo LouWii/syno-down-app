@@ -2,6 +2,7 @@
   width: 100%;
   column-count: 2;
   column-gap: 15px;
+  column-width: 50%;
 }
 
 /*.tasks-list.card-style::before {
@@ -19,4 +20,11 @@
   display: table;
   border-collapse: collapse;
   width: 100%;
+}
+
+@media screen and (max-width: 990px) {
+  .tasks-list.card-style {
+    column-count: 1;
+    column-width: 100%;
+  }
 }

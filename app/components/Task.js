@@ -7,17 +7,13 @@ class Task extends React.Component {
   constructor(props) {
     super(props)
     this.renderStyle = this.renderStyle.bind(this)
-    this.handleClick = this.handleClick.bind(this)
     this.state = {toggled: false}
-  }
-
-  handleClick(e) {
-    this.setState({toggled: !this.state.toggled})
   }
 
   renderStyle(task, style) {
     let progress = '?'
     let currentSize = '?'
+    let uploadedSize = '?'
     const totalSize = fileSizeSI(this.props.task.size)
     let createdOn = '?'
     let finishedOn = ' - '
@@ -36,6 +32,7 @@ class Task extends React.Component {
         currentSize = fileSizeSI(this.props.task.additional.transfer.size_downloaded)
         dlSpeed = this.props.task.additional.transfer.speed_download
         upSpeed = this.props.task.additional.transfer.speed_upload
+        uploadedSize = fileSizeSI(this.props.task.additional.transfer.size_uploaded)
       }
       if (this.props.task.additional.detail) {
         createdOn = new Date(this.props.task.additional.detail.create_time*1000).toLocaleDateString() + ' ' + new Date(this.props.task.additional.detail.create_time*1000).toLocaleTimeString()
@@ -76,7 +73,7 @@ class Task extends React.Component {
       )
     } else {
       return (
-        <div className={"task " + (this.state.toggled?"toggled":"")} onClick={this.handleClick}>
+        <div className={"task " + (this.state.toggled?"toggled":"")} >
           <div className="task-title">
             <StatusIcon status={this.props.task.status} /> {this.props.task.title}
           </div>
@@ -116,6 +113,9 @@ class Task extends React.Component {
             <div className="task-info-row row">
               <div className="task-info task-seeding">
                 <strong>Seed time</strong> {seeding}
+              </div>
+              <div className="task-info task-uploaded">
+                <strong>Uploaded</strong> {uploadedSize}
               </div>
             </div>
             <div className="task-info-row">

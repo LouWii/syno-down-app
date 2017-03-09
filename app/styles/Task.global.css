@@ -14,12 +14,12 @@
 
 .card-style .task {
   break-inside: avoid;
+  page-break-inside: avoid;
   margin-bottom: 14px;
   margin-top: 1px;
   box-shadow: 0px 0px 1px #b1b1b1;
   display: inline-block;
   width: 100%;
-  cursor: pointer;
 }
 
 .card-style .task .task-title {
@@ -44,19 +44,13 @@
 }
 
 .task-content.content-more {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .25s ease-in-out;
+  max-height: 95px;
   padding-top: 0;
   padding-bottom: 0;
 }
 
 .task.toggled .task-content.content-more {
-  max-height: 95px;
-  height: unset;
-  overflow: hidden;
-  transition: max-height .25s ease-in-out;
-  
+
 }
 
 .task-size {
