@@ -8,6 +8,11 @@
 
 .loading-overlay.running {
   opacity: 1;
+  display: block;
+}
+
+.loading-overlay.done {
+  display: none;
 }
 
 .loading-background {
