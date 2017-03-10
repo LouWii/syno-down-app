@@ -7,7 +7,8 @@ function mapStateToProps(state) {
   return {
     profiles: state.profiles,
     tasks: state.tasks,
-    clients: state.clients
+    clients: state.clients,
+    filters: state.filters
   }
 }
 

@@ -10,11 +10,12 @@ class TasksList extends React.Component {
 
   render() {
     const listClass = this.props.style === 'table' ? 'table-style' : 'card-style'
+    const statusFilter = this.props.filters.statusFilter
     return (
       <div className="tasks-list">
-        <TasksListFilters />
+        <TasksListFilters filters={this.props.filters} filtersStatusFilter={this.props.filtersStatusFilter} />
         <div className={'tasks-items ' + listClass}>
-          {this.props.tasks.map((task, idx) => <Task key={idx} task={task} idx={idx} style={this.props.style} />)}
+          {this.props.tasks.filter((task) => 'all'===statusFilter||task.status===statusFilter).map((task, idx) => <Task key={idx} task={task} idx={idx} style={this.props.style} />)}
         </div>
       </div>
     )

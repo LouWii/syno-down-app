@@ -35,7 +35,10 @@ const enhancer = composeEnhancers(
 const defaultState = {
   profiles: [],
   tasks: [],
-  clients: {}
+  clients: {},
+  filters: {
+    statusFilter: "all"
+  }
 }
 
 const persistedState = localStorage.getItem(stateStorageKey) ? JSON.parse(localStorage.getItem(stateStorageKey)) : defaultState

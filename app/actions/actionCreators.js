@@ -96,3 +96,10 @@ export function clientListReceived(tasksList, totalTasks) {
     totalTasks
   }
 }
+
+export function filtersStatusFilter(statusFilter) {
+  return {
+    type: 'FILTERS_STATUSFILTER',
+    statusFilter
+  }
+}

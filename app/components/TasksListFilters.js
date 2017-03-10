@@ -11,14 +11,13 @@ class TasksListFilters extends React.Component {
   }
 
   renderButton() {
-    console.log(this)
     return Object.keys(statusToIcon)
-      .map((e) => <button key={e} type="button" title={capitalize(e.replace('_', ' '))} ref={e} className={"btn btn-"+((e===this.state.activeFilter)?"primary":"default")}><span className={statusToIcon[e]} ></span></button>);
+      .map((e) => <button key={e} type="button" title={capitalize(e.replace('_', ' '))} data-status={e} className={"btn btn-"+((e===this.props.filters.statusFilter)?"primary":"default")} onClick={this.handleStatusFilter}><span className={statusToIcon[e]} ></span></button>);
   }
 
   handleStatusFilter(e) {
     e.preventDefault()
-
+    this.props.filtersStatusFilter(e.currentTarget.dataset.status)
   }
 
   render() {
@@ -26,7 +25,7 @@ class TasksListFilters extends React.Component {
       <div className="tasks-list-filters">
           <div className="tasks-list-filter">
             <div className="btn-group" role="group" aria-label="...">
-              <button type="button" ref="all" className={"btn btn-"+(('all'===this.state.activeFilter)?"primary":"default")}>All</button>
+              <button type="button" data-status="all" className={"btn btn-"+(('all'===this.props.filters.statusFilter)?"primary":"default")} onClick={this.handleStatusFilter}>All</button>
               {this.renderButton()}
             </div>
           </div>
