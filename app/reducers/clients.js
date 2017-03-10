@@ -13,6 +13,10 @@ function clients(state = [], action) {
       return Object.assign({}, state, {
         clientIsLoading: false
       })
+    case 'CLIENT_PROFILE_SELECTED':
+      return Object.assign({}, state, {
+        selectedProfileIndex: action.index
+      })
     default:
       return state
   }

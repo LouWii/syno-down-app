@@ -11,6 +11,7 @@ class Client extends React.Component {
   }
 
   componentDidMount() {
+    this.props.selectClientProfile(this.state.idx)
     this.props.clientLogin(this.state.profile)
   }
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import LoadingOverlay from './LoadingOverlay'
+import AppBar from './AppBar'
 import '../styles/Main.global.css';
 
 class Main extends Component {
@@ -7,9 +8,7 @@ class Main extends Component {
   render() {
     return (
       <div className="main">
-        <div className="app-bar">
-          <h2>Syno Down App</h2>
-        </div>
+        <AppBar client={this.props.clients} profiles={this.props.profiles} />
         <LoadingOverlay {...this.props} />
         <div className="main-container container">
           {React.cloneElement(this.props.children, this.props)}
