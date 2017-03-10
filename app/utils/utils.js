@@ -27,3 +27,17 @@ export function capitalize(string = ''){
     (char, index) => index ? char : char.toUpperCase()
   ).join('')
 }
+
+export const statusToIcon = {
+  'waiting': 'glyphicon glyphicon-hourglass',
+  'downloading': 'glyphicon glyphicon-save',
+  'paused': 'glyphicon glyphicon-pause',
+  'finishing': 'glyphicon glyphicon-refresh',
+  'finished': 'glyphicon glyphicon-ok',
+  'hash_checking': 'glyphicon glyphicon-tasks',
+  'seeding': 'glyphicon glyphicon-export',
+  'filehosting_waiting': 'glyphicon glyphicon-cloud',
+  'extracting': 'glyphicon glyphicon-compressed',
+  'error': 'glyphicon glyphicon-alert',
+  'other': 'glyphicon glyphicon-question-sign'
+}
