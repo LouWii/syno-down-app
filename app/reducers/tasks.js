@@ -1,6 +1,5 @@
 
 function tasks(state = [], action) {
-  console.log(action)
   switch(action.type){
     case 'TASKS_LIST_UPDATE':
       // List of tasks hae been updated
