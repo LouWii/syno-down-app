@@ -11,10 +11,17 @@ export function addProfile(name, url, port, login, password) {
   }
 }
 
-export function deleteProfile(idx) {
+export function deleteProfile(index) {
   return {
     type: 'PROFILE_DELETE',
-    idx
+    index
+  }
+}
+
+export function selectClientProfile(index) {
+  return {
+    type: 'CLIENT_PROFILE_SELECTED',
+    index
   }
 }
 

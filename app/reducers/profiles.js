@@ -9,8 +9,8 @@ function profiles(state = [], action) {
       ]
     case 'PROFILE_DELETE':
       return [
-        ...state.slice(0, action.idx),
-        ...state.slice(action.idx + 1)
+        ...state.slice(0, action.index),
+        ...state.slice(action.index + 1)
       ]
     default:
       return state
