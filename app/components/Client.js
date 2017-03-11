@@ -15,6 +15,17 @@ class Client extends React.Component {
     this.props.clientLogin(this.state.profile)
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.clients.autoRefresh
+    && this.props.clients.tasksLoaded) {
+      // Do ajax polling
+    }
+  }
+
+  componentWillUnmount() {
+    // Stop any refreshing query ?
+  }
+
   render() {
     return (
       <div className="client">

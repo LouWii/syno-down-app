@@ -53,14 +53,14 @@ export function clientLoaded() {
   }
 }
 
-export function clientLogin(profile) {
+export function clientLogin(profile, autoRefresh = false) {
   return dispatch => {
     dispatch(clientLoading())
     fetch(synoLoginQuery(profile), {credentials: 'include'}).then( (response) => {
       if(response.status === 200){
         response.json().then( (json) => {
           dispatch(clientLoggedIn(json.data.sid))
-          dispatch(clientList(profile))
+          dispatch(clientList(profile, autoRefresh))
         })
 
       } else {
@@ -82,13 +82,14 @@ export function clientLoggedIn(sid) {
   }
 }
 
-export function clientList(profile) {
+export function clientList(profile, autoRefresh) {
   return dispatch => {
     fetch(synoDSListQuery(profile), {credentials: 'include'}).then( (response) => {
       if(response.status === 200){
         response.json().then( (json) => {
           dispatch(clientListReceived(json.data.tasks, json.data.total))
           dispatch(clientLoaded())
+          dispatch({type: 'CLIENT_TASKS_LOADED'})
         })
       } else {
         console.error(response)

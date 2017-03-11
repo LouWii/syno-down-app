@@ -37,7 +37,9 @@ const defaultState = {
   tasks: [],
   clients: {
     clientIsLoading: false,
-    selectedProfileIndex: -1
+    selectedProfileIndex: -1,
+    autoRefresh: false,
+    tasksLoaded: false
   },
   filters: {
     statusFilter: "all"
