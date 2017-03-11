@@ -18,7 +18,6 @@ class Client extends React.Component {
   render() {
     return (
       <div className="client">
-        <h2>{this.state.profile.name}</h2>
         <TasksList tasks={this.props.tasks} filters={this.props.filters} filtersStatusFilter={this.props.filtersStatusFilter}/>
       </div>
     )
