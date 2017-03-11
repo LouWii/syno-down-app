@@ -30,8 +30,8 @@ class Task extends React.Component {
       }
       if (this.props.task.additional.transfer) {
         currentSize = fileSizeSI(this.props.task.additional.transfer.size_downloaded)
-        dlSpeed = this.props.task.additional.transfer.speed_download
-        upSpeed = this.props.task.additional.transfer.speed_upload
+        dlSpeed = fileSizeSI(this.props.task.additional.transfer.speed_download) + '/s'
+        upSpeed = fileSizeSI(this.props.task.additional.transfer.speed_upload) + '/s'
         uploadedSize = fileSizeSI(this.props.task.additional.transfer.size_uploaded)
       }
       if (this.props.task.additional.detail) {
