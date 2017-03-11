@@ -4,6 +4,10 @@ import Profile from './Profile'
 
 class ProfilesList extends React.Component {
 
+  componentDidMount() {
+    this.props.clearSelectedClientProfile()
+  }
+
   renderProfile(idx, profile) {
     return (
       <Profile key={idx} idx={idx} profile={profile} deleteProfile={this.props.deleteProfile} />

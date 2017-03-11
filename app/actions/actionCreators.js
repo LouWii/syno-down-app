@@ -25,6 +25,12 @@ export function selectClientProfile(index) {
   }
 }
 
+export function clearSelectedClientProfile() {
+  return {
+    type: 'CLIENT_PROFILE_CLEAR'
+  }
+}
+
 /**
  * Create action when current client is loading data
  * @export

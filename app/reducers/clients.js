@@ -17,6 +17,10 @@ function clients(state = [], action) {
       return Object.assign({}, state, {
         selectedProfileIndex: action.index
       })
+    case 'CLIENT_PROFILE_CLEAR':
+      return Object.assign({}, state, {
+        selectedProfileIndex: -1
+      })
     default:
       return state
   }
