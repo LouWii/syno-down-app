@@ -34,15 +34,18 @@ const enhancer = composeEnhancers(
 
 const defaultState = {
   profiles: [],
-  tasks: [],
-  clients: {
+  client: {
     clientIsLoading: false,
     selectedProfileIndex: -1,
     autoRefresh: false,
-    tasksLoaded: false
+    tasksLoaded: false,
+    tasks: [],
+    filters: {
+      statusFilter: "all"
+    }
   },
-  filters: {
-    statusFilter: "all"
+  ui: {
+    loadingOverlay: false
   }
 }
 

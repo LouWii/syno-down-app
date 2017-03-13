@@ -17,6 +17,15 @@ function clients(state = [], action) {
       return Object.assign({}, state, {
         tasksLoaded: true
       })
+    case 'TASKS_LIST_UPDATE':
+      // List of tasks has been updated
+      if (state.tasks.length) {
+        return state.tasks.map(obj => action.tasksList.find(o => o.id === obj.id) || obj);
+      } else {
+        return Object.assign({}, state, {
+          tasks: action.tasksList
+        })
+      }
     case 'CLIENT_PROFILE_SELECTED':
       return Object.assign({}, state, {
         selectedProfileIndex: action.index
@@ -24,6 +33,15 @@ function clients(state = [], action) {
     case 'CLIENT_PROFILE_CLEAR':
       return Object.assign({}, state, {
         selectedProfileIndex: -1
+      })
+    case 'FILTERS_STATUSFILTER':
+      console.log(state.filters)
+      const filters = Object.assign({}, state.filters, {
+        statusFilter: action.statusFilter
+      })
+      console.log(filters)
+      return Object.assign({}, state, {
+        filters: filters
       })
     default:
       return state

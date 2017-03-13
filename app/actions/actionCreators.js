@@ -56,6 +56,7 @@ export function clientLoaded() {
 export function clientLogin(profile, autoRefresh = false) {
   return dispatch => {
     dispatch(clientLoading())
+    dispatch(uiShowLoadingOverlay())
     fetch(synoLoginQuery(profile), {credentials: 'include'}).then( (response) => {
       if(response.status === 200){
         response.json().then( (json) => {
@@ -66,11 +67,13 @@ export function clientLogin(profile, autoRefresh = false) {
       } else {
         console.error(response)
         dispatch(clientLoaded())
+        dispatch(uiHideLoadingOverlay())
       }
     }, (response) => {
       // Promise failed/rejected
       console.error(response)
       dispatch(clientLoaded())
+      dispatch(uiHideLoadingOverlay())
     })
   }
 }
@@ -89,16 +92,19 @@ export function clientList(profile, autoRefresh) {
         response.json().then( (json) => {
           dispatch(clientListReceived(json.data.tasks, json.data.total))
           dispatch(clientLoaded())
+          dispatch(uiHideLoadingOverlay())
           dispatch({type: 'CLIENT_TASKS_LOADED'})
         })
       } else {
         console.error(response)
         dispatch(clientLoaded())
+        dispatch(uiHideLoadingOverlay())
       }
     }, (response) => {
       // Promise failed/rejected
       console.error(response)
       dispatch(clientLoaded())
+      dispatch(uiHideLoadingOverlay())
     })
   }
 }
@@ -115,5 +121,17 @@ export function filtersStatusFilter(statusFilter) {
   return {
     type: 'FILTERS_STATUSFILTER',
     statusFilter
+  }
+}
+
+export function uiShowLoadingOverlay() {
+  return {
+    type: 'UI_SHOW_LOADING_OVERLAY'
+  }
+}
+
+export function uiHideLoadingOverlay() {
+  return {
+    type: 'UI_HIDE_LOADING_OVERLAY'
   }
 }

@@ -1,11 +1,10 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import clients from './clients';
-import filters from './filters'
+import client from './client';
 import profiles from './profiles';
-import tasks from './tasks';
+import ui from './ui';
 
-const rootReducer = combineReducers({profiles, clients, tasks, filters, routing: routerReducer});
+const rootReducer = combineReducers({profiles, client, ui, routing: routerReducer});
 
 export default rootReducer;

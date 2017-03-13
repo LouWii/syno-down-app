@@ -8,7 +8,7 @@ class Main extends Component {
   render() {
     return (
       <div className="main">
-        <AppBar client={this.props.clients} profiles={this.props.profiles} />
+        <AppBar client={this.props.client} profiles={this.props.profiles} />
         <LoadingOverlay {...this.props} />
         <div className="main-container container">
           {React.cloneElement(this.props.children, this.props)}

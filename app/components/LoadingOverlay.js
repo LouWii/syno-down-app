@@ -4,7 +4,7 @@ import '../styles/LoadingOverlay.global.css'
 class LoadingOverlay extends React.Component {
 
   render() {
-    const visibilityClass = this.props.clients.clientIsLoading ? 'running' : 'done'
+    const visibilityClass = this.props.ui.loadingOverlay ? 'running' : 'done'
     return (
       <div className={'loading-overlay '+visibilityClass}>
         <div className="loading-background">
@@ -13,8 +13,8 @@ class LoadingOverlay extends React.Component {
           <div className="loading-container">
             <h3>Loading</h3>
             <div className="progress">
-              <div className="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style={{width: '100%'}}>
-                <span className="sr-only">45% Complete</span>
+              <div className="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style={{width: '100%'}}>
+                <span className="sr-only">100% Complete</span>
               </div>
             </div>
           </div>

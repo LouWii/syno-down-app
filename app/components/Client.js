@@ -16,8 +16,8 @@ class Client extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.clients.autoRefresh
-    && this.props.clients.tasksLoaded) {
+    if (this.props.client.autoRefresh
+    && this.props.client.tasksLoaded) {
       // Do ajax polling
     }
   }
@@ -29,14 +29,15 @@ class Client extends React.Component {
   render() {
     return (
       <div className="client">
-        <TasksList tasks={this.props.tasks} filters={this.props.filters} filtersStatusFilter={this.props.filtersStatusFilter}/>
+        <TasksList tasks={this.props.client.tasks} filters={this.props.client.filters} filtersStatusFilter={this.props.filtersStatusFilter}/>
       </div>
     )
   }
 }
 
 Client.propTypes = {
-  profiles: React.PropTypes.arrayOf(React.PropTypes.object)
+  profiles: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+  client: React.PropTypes.object.isRequired
 }
 
 export default Client;
