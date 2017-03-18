@@ -20,7 +20,9 @@ function clients(state = [], action) {
     case 'TASKS_LIST_UPDATE':
       // List of tasks has been updated
       if (state.tasks.length) {
-        return state.tasks.map(obj => action.tasksList.find(o => o.id === obj.id) || obj);
+        return Object.assign({}, state, {
+          tasks: state.tasks.map(obj => action.tasksList.find(o => o.id === obj.id) || obj)
+        })
       } else {
         return Object.assign({}, state, {
           tasks: action.tasksList
