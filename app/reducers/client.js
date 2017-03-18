@@ -37,13 +37,25 @@ function clients(state = [], action) {
         selectedProfileIndex: -1
       })
     case 'FILTERS_STATUSFILTER':
-      console.log(state.filters)
       const filters = Object.assign({}, state.filters, {
         statusFilter: action.statusFilter
       })
-      console.log(filters)
       return Object.assign({}, state, {
         filters: filters
+      })
+    case 'FILTERS_SEARCH':
+      const filtersTmp = Object.assign({}, state.filters, {
+        searchKeywords: action.keywords
+      })
+      return Object.assign({}, state, {
+        filters: filtersTmp
+      })
+    case 'FILTERS_SEARCH_RESET':
+      const filtersTmpR = Object.assign({}, state.filters, {
+        searchKeywords: ''
+      })
+      return Object.assign({}, state, {
+        filters: filtersTmpR
       })
     default:
       return state

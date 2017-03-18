@@ -41,7 +41,8 @@ const defaultState = {
     tasksLoaded: false,
     tasks: [],
     filters: {
-      statusFilter: "all"
+      statusFilter: "all",
+      searchKeywords: ''
     }
   },
   ui: {

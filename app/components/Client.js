@@ -29,15 +29,15 @@ class Client extends React.Component {
   render() {
     return (
       <div className="client">
-        <TasksList tasks={this.props.client.tasks} filters={this.props.client.filters} filtersStatusFilter={this.props.filtersStatusFilter}/>
+        <TasksList tasks={this.props.client.tasks} filters={this.props.client.filters} filtersStatusFilter={this.props.filtersStatusFilter} filtersSearch={this.props.filtersSearch} filtersSearchReset={this.props.filtersSearchReset} />
       </div>
     )
   }
 }
 
 Client.propTypes = {
-  profiles: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
-  client: React.PropTypes.object.isRequired
+  profiles: React.PropTypes.arrayOf(React.PropTypes.object),
+  client: React.PropTypes.object
 }
 
 export default Client;

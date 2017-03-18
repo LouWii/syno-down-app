@@ -124,6 +124,19 @@ export function filtersStatusFilter(statusFilter) {
   }
 }
 
+export function filtersSearch(keywords) {
+  return {
+    type: 'FILTERS_SEARCH',
+    keywords
+  }
+}
+
+export function filtersSearchReset() {
+  return {
+    type: 'FILTERS_SEARCH_RESET'
+  }
+}
+
 export function uiShowLoadingOverlay() {
   return {
     type: 'UI_SHOW_LOADING_OVERLAY'
