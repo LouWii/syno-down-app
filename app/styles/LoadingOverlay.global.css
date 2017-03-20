@@ -41,3 +41,7 @@
   padding: 5px 15px;
   z-index: 15;
 }
+
+.dark-theme .loading-background {
+  background: rgba(183, 183, 183, .5);
+}
