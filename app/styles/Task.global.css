@@ -1,6 +1,8 @@
 .table-style .task {
   display: table-row;
   border-bottom: 1px solid #ccc;
+  user-select: none;
+  cursor: default;
 }
 
 .table-style .task:hover {
@@ -20,15 +22,19 @@
   box-shadow: 0px 0px 1px #b1b1b1;
   display: inline-block;
   width: 100%;
+  font-weight: 200;
+  user-select: none;
+  cursor: default;
 }
 
 .card-style .task .task-title {
   word-break: break-all;
   /*background: #f3f3f3;*/
   background: #E5E9F0;
-  padding: 2px 3px;
-  font-size: 17px;
-  font-weight: bold;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: 'Lato', sans-serif;
 }
 
 .task .task-title .glyphicon {
@@ -42,7 +48,8 @@
 }
 
 .task-content {
-  padding: 5px 10px;
+  padding: 10px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .task-content.content-more {
@@ -74,4 +81,28 @@
 
 .task-info-row .task-info:nth-child(2) {
   text-align: right;
+}
+
+.dark-theme .card-style .task {
+  background: #4C566A;
+  color: #E5E9F0;
+  border: none;
+  box-shadow: none;
+}
+
+.dark-theme .card-style .task .task-title {
+  background: #5E81AC;
+  color: #fff;
+}
+
+.dark-theme .task-progress-bar {
+  background-color: #8FBCBB;
+}
+
+.dark-theme .task-content {
+
+}
+
+.dark-theme .task-content.content-more {
+  padding: 0 10px 10px 10px;
 }

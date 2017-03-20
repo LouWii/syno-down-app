@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router'
 import Profile from './Profile'
+import '../styles/ProfilesList.global.css';
 
 class ProfilesList extends React.Component {
 

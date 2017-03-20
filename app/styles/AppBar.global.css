@@ -5,6 +5,8 @@
   border: 1px solid transparent;
   padding: 5px 0 10px 10px;
   vertical-align: top;
+  user-select: none;
+  cursor: default;
 }
 
 .app-bar-back {
@@ -41,4 +43,8 @@
 .app-bar .profile-name {
   display: inline-block;
   font-size: 24px;
+}
+
+.dark-theme .app-bar {
+  background: #2E3440;
 }

@@ -7,7 +7,7 @@ class Main extends Component {
 
   render() {
     return (
-      <div className="main">
+      <div className="main dark-theme">
         <AppBar client={this.props.client} profiles={this.props.profiles} />
         <LoadingOverlay {...this.props} />
         <div className="main-container container">

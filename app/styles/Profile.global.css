@@ -14,6 +14,9 @@
   min-height: 1px;
   width: 49%;
   float: left;
+
+  user-select: none;
+  cursor: default;
 }
 
 .profile:hover {
@@ -32,12 +35,14 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   padding: 5px 10px;
-  font-weight: 200;
   font-size: 18px;
+  font-weight: 300;
+  font-family: 'Lato', sans-serif;
 }
 
 .profile .content {
   padding: 5px 10px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .profile .actions {
@@ -47,4 +52,22 @@
 .profile .actions .btn-danger {
   float: right;
   margin-top: 5px;
+}
+
+.dark-theme .profile {
+  box-shadow: none;
+}
+
+.dark-theme .profile header {
+  background: #5E81AC;
+  color: #fff;
+}
+
+.dark-theme .profile .content {
+  background: #4C566A;
+  color: #E5E9F0;
+}
+
+.dark-theme .profile .actions {
+  background: #4C566A;
 }
