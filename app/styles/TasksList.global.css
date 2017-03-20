@@ -1,3 +1,7 @@
+.tasks-list-actions {
+  margin-bottom: 15px;
+}
+
 .tasks-items.card-style {
   width: 100%;
   column-count: 1;

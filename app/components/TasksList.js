@@ -6,6 +6,11 @@ import '../styles/TasksList.global.css'
 class TasksList extends React.Component {
   constructor(props) {
     super(props)
+    this.handleAddTask = this.handleAddTask.bind(this)
+  }
+
+  handleAddTask(e) {
+    e.preventDefault()
   }
 
   render() {
@@ -14,6 +19,11 @@ class TasksList extends React.Component {
     return (
       <div className="tasks-list">
         <TasksListFilters filters={this.props.filters} filtersStatusFilter={this.props.filtersStatusFilter} filtersSearch={this.props.filtersSearch} filtersSearchReset={this.props.filtersSearchReset} />
+        <div className="tasks-list-actions">
+          <div className="btn-group" role="group" aria-label="...">
+            <button type="button" className="btn btn-primary" onClick={this.handleAddTask}>Add</button>
+          </div>
+        </div>
         <div className={'tasks-items ' + listClass}>
           {this.props.tasks.filter(
             (task) => ('all'===statusFilter||task.status===statusFilter)

@@ -37,20 +37,20 @@ class TasksListFilters extends React.Component {
   render() {
     return (
       <div className="tasks-list-filters">
-          <div className="tasks-list-filter">
-            <div className="btn-group" role="group" aria-label="...">
-              <button type="button" data-status="all" className={"btn btn-"+(('all'===this.props.filters.statusFilter)?"primary":"default")} onClick={this.handleStatusFilter}>All</button>
-              {this.renderButton()}
-            </div>
-          </div>
-          <div className="tasks-list-search">
-            <div className="form-group has-feedback">
-              <input type="text" className="form-control" id="inputSuccess3" placeholder="Search..." onChange={this.handleSearchChange} value={this.state.searchKeywords} />
-              <span className="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" onClick={this.handleSearchReset}></span>
-              <span id="inputSuccess3Status" className="sr-only">(success)</span>
-            </div>
+        <div className="tasks-list-filter">
+          <div className="btn-group" role="group" aria-label="...">
+            <button type="button" data-status="all" className={"btn btn-"+(('all'===this.props.filters.statusFilter)?"primary":"default")} onClick={this.handleStatusFilter}>All</button>
+            {this.renderButton()}
           </div>
         </div>
+        <div className="tasks-list-search">
+          <div className="form-group has-feedback">
+            <input type="text" className="form-control" id="inputSuccess3" placeholder="Search..." onChange={this.handleSearchChange} value={this.state.searchKeywords} />
+            <span className="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" onClick={this.handleSearchReset}></span>
+            <span id="inputSuccess3Status" className="sr-only">(success)</span>
+          </div>
+        </div>
+      </div>
     )
   }
 }

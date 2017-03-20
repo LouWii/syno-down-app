@@ -1,5 +1,11 @@
 .tasks-list-filters {
-  margin-bottom: 15px;
+
+}
+
+.tasks-list-filters::after {
+  content: '';
+  display: table;
+  clear: both;
 }
 
 .tasks-list-filter {
