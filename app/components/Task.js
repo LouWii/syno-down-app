@@ -118,8 +118,13 @@ class Task extends React.Component {
                 <strong>Uploaded</strong> {uploadedSize}
               </div>
             </div>
-            <div className="task-info-row">
-              <strong>Destination</strong> {destination}
+            <div className="task-info-row row">
+              <div className="task-info">
+                <strong>Destination</strong> {destination}
+              </div>
+              <div className="task-info">
+                <a href="#">Files</a>
+              </div>
             </div>
           </div>
         </div>
