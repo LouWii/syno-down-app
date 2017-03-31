@@ -13,12 +13,11 @@ class TasksList extends React.Component {
 
   handleAddTask(e) {
     e.preventDefault()
-    console.log(this.refs)
+    
   }
 
   handleShowFiles(e, idx, task) {
     e.preventDefault()
-    console.log(idx)
     const title = 'List of files'
     let content = (<div>
       {
