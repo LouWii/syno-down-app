@@ -129,7 +129,7 @@ class Task extends React.Component {
                 <strong>Destination</strong> {destination}
               </div>
               <div className="task-info">
-                <a href="#" onClick={this.handleShowFiles}>Files</a>
+                <a href="#" onClick={this.handleShowFiles}><span className="glyphicon glyphicon-duplicate"></span> Files</a>
               </div>
             </div>
           </div>

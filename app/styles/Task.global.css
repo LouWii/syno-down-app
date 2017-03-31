@@ -52,6 +52,15 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+.task-content a {
+  color: #88C0D0;
+  font-weight: bold;
+}
+
+.task-content a:hover {
+  color: #5E81AC;
+}
+
 .task-content.content-more {
   max-height: 115px;
   padding-top: 0;

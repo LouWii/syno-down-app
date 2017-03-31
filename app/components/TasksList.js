@@ -1,6 +1,7 @@
 import React from 'react'
 import TasksListFilters from './TasksListFilters'
 import Task from './Task'
+import { fileSizeSI } from '../utils/utils'
 import '../styles/TasksList.global.css'
 
 class TasksList extends React.Component {
@@ -24,7 +25,7 @@ class TasksList extends React.Component {
         task.additional.file &&
         <table className="table">
           <tbody>
-          {task.additional.file.map((file, idx) => <tr><td>{file.filename}</td><td>{file.priority}</td></tr>)}
+          {task.additional.file.map((file, idx) => <tr><td>{file.filename}</td><td>{file.priority}</td><td>{fileSizeSI(file.size)}</td></tr>)}
           </tbody>
         </table>
       }
