@@ -8,12 +8,17 @@ class Task extends React.Component {
     super(props)
     this.renderStyle = this.renderStyle.bind(this)
     this.handleShowFiles = this.handleShowFiles.bind(this)
+    this.handleShowOptions = this.handleShowOptions.bind(this)
     this.state = {toggled: false}
   }
 
   handleShowFiles(e) {
     e.preventDefault()
     this.props.handleShowFiles(e, this.props.idx, this.props.task)
+  }
+
+  handleShowOptions(e) {
+    e.preventDefault()
   }
 
   renderStyle(task, style) {
@@ -81,7 +86,9 @@ class Task extends React.Component {
       return (
         <div className={"task " + (this.state.toggled?"toggled":"")} >
           <div className="task-title">
-            <StatusIcon status={this.props.task.status} /> {this.props.task.title}
+            <StatusIcon status={this.props.task.status} />
+            <a className="task-options-button" href="#" onClick={this.handleShowOptions}><span className="glyphicon glyphicon-cog"></span></a>
+            {this.props.task.title}
           </div>
           <div className="task-progress-bar" style={{width: progress + '%'}}>
           </div>

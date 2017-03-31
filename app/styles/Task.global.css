@@ -37,8 +37,21 @@
   font-family: 'Lato', sans-serif;
 }
 
-.task .task-title .glyphicon {
+.task .task-title .status-icon {
   margin-right: 2px;
+}
+
+.task-options-button {
+  display: block;
+  float: right;
+  color: #88C0D0;
+  font-size: 19px;
+  /*letter-spacing: -6px;*/
+  margin-top: 2px;
+}
+
+.task-options-button:hover {
+  color: #81A1C1;
 }
 
 .task-progress-bar {
