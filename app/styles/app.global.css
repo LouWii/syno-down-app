@@ -3,14 +3,17 @@
 @import "../vendors/google-fonts/google-fonts.css";
 
 body {
-  min-height: 100vh;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
 
+body.dark-theme {
+  background: #3B4252;
+}
+
 #root {
-  min-height: 100vh;
+  
 }
 
 .container-small {
