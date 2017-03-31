@@ -18,12 +18,20 @@ class TasksList extends React.Component {
     const { statusFilter, searchKeywords} = this.props.filters
     return (
       <div className="tasks-list">
-        <TasksListFilters filters={this.props.filters} filtersStatusFilter={this.props.filtersStatusFilter} filtersSearch={this.props.filtersSearch} filtersSearchReset={this.props.filtersSearchReset} />
-        <div className="tasks-list-actions">
-          <div className="btn-group" role="group" aria-label="...">
-            <button type="button" className="btn btn-primary" onClick={this.handleAddTask}>Add</button>
+        {
+          this.props.tasksLoaded
+          &&
+          <TasksListFilters filters={this.props.filters} filtersStatusFilter={this.props.filtersStatusFilter} filtersSearch={this.props.filtersSearch} filtersSearchReset={this.props.filtersSearchReset} />
+        }
+        {
+          this.props.tasksLoaded
+          &&
+          <div className="tasks-list-actions">
+            <div className="btn-group" role="group" aria-label="...">
+              <button type="button" className="btn btn-primary" onClick={this.handleAddTask}>Add</button>
+            </div>
           </div>
-        </div>
+          }
         <div className={'tasks-items ' + listClass}>
           {this.props.tasks.filter(
             (task) => ('all'===statusFilter||task.status===statusFilter)
