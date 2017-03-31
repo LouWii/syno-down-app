@@ -7,7 +7,8 @@ function mapStateToProps(state) {
   return {
     profiles: state.profiles,
     client: state.client,
-    ui: state.ui
+    ui: state.ui,
+    popup: state.popup
   }
 }
 

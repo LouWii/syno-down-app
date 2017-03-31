@@ -46,7 +46,12 @@ const defaultState = {
     }
   },
   ui: {
-    loadingOverlay: false
+    loadingOverlay: false,
+  },
+  popup: {
+    title: '',
+    content: '',
+    show: false
   }
 }
 

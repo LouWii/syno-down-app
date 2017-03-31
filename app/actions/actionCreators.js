@@ -148,3 +148,16 @@ export function uiHideLoadingOverlay() {
     type: 'UI_HIDE_LOADING_OVERLAY'
   }
 }
+
+export function popupShow(popupOptions) {
+  return {
+    type: 'POPUP_SHOW',
+    popupOptions
+  }
+}
+
+export function popupHide() {
+  return {
+    type: 'POPUP_HIDE'
+  }
+}
