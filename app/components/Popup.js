@@ -8,6 +8,8 @@ class Popup extends React.Component {
   }
 
   render() {
+    // Update body class when modal is open
+    document.body.classList.toggle('modal-open', this.props.popup.show)
     const display = this.props.popup.show ? 'block' : 'none'
     const className = "modal fade" + (this.props.popup.show ? ' in' : '')
     return (
