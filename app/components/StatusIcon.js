@@ -5,11 +5,11 @@ import { capitalize, statusToIcon } from '../utils/utils'
 class StatusIcon extends React.Component {
 
   render() {
-    let iconClass = ''
+    let iconClass = 'status-icon '
     if (statusToIcon[this.props.status]) {
-      iconClass = statusToIcon[this.props.status]
+      iconClass += statusToIcon[this.props.status]
     } else {
-      iconClass = statusToIcon['other']
+      iconClass += statusToIcon['other']
     }
     return (
       <span className={iconClass} title={capitalize(this.props.status.replace('_', ' '))} aria-hidden="true"></span>
