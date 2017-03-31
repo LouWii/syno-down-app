@@ -7,7 +7,13 @@ class Task extends React.Component {
   constructor(props) {
     super(props)
     this.renderStyle = this.renderStyle.bind(this)
+    this.handleShowFiles = this.handleShowFiles.bind(this)
     this.state = {toggled: false}
+  }
+
+  handleShowFiles(e) {
+    e.preventDefault()
+    this.props.handleShowFiles(e, this.props.idx, this.props.task)
   }
 
   renderStyle(task, style) {
@@ -123,7 +129,7 @@ class Task extends React.Component {
                 <strong>Destination</strong> {destination}
               </div>
               <div className="task-info">
-                <a href="#">Files</a>
+                <a href="#" onClick={this.handleShowFiles}>Files</a>
               </div>
             </div>
           </div>

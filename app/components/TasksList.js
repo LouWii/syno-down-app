@@ -7,10 +7,32 @@ class TasksList extends React.Component {
   constructor(props) {
     super(props)
     this.handleAddTask = this.handleAddTask.bind(this)
+    this.handleShowFiles = this.handleShowFiles.bind(this)
   }
 
   handleAddTask(e) {
     e.preventDefault()
+    console.log(this.refs)
+  }
+
+  handleShowFiles(e, idx, task) {
+    e.preventDefault()
+    console.log(idx)
+    const title = 'List of files'
+    let content = (<div>
+      {
+        task.additional.file &&
+        <table className="table">
+          <tbody>
+          {task.additional.file.map((file, idx) => <tr><td>{file.filename}</td><td>{file.priority}</td></tr>)}
+          </tbody>
+        </table>
+      }
+      {!task.additional.file &&
+        <p>Files list not available</p>
+      }
+      </div>)
+    this.props.popupShow({title, content})
   }
 
   render() {
@@ -32,11 +54,11 @@ class TasksList extends React.Component {
             </div>
           </div>
           }
-        <div className={'tasks-items ' + listClass}>
+        <div className={'tasks-items ' + listClass} ref="tasks-list">
           {this.props.tasks.filter(
             (task) => ('all'===statusFilter||task.status===statusFilter)
             && (''===searchKeywords||task.title.toLowerCase().includes(searchKeywords.toLowerCase()))
-          ).map((task, idx) => <Task key={idx} task={task} idx={idx} style={this.props.style} />)}
+          ).map((task, idx) => <Task key={idx} task={task} idx={idx} style={this.props.style} handleShowFiles={this.handleShowFiles} />)}
         </div>
       </div>
     )

@@ -28,8 +28,16 @@ class Client extends React.Component {
 
   render() {
     return (
-      <div className="client">
-        <TasksList tasks={this.props.client.tasks} filters={this.props.client.filters} tasksLoaded={this.props.client.tasksLoaded} filtersStatusFilter={this.props.filtersStatusFilter} filtersSearch={this.props.filtersSearch} filtersSearchReset={this.props.filtersSearchReset} />
+      <div className="client" ref="client">
+        <TasksList 
+          tasks={this.props.client.tasks} 
+          filters={this.props.client.filters} 
+          tasksLoaded={this.props.client.tasksLoaded} 
+          filtersStatusFilter={this.props.filtersStatusFilter} 
+          filtersSearch={this.props.filtersSearch} 
+          filtersSearchReset={this.props.filtersSearchReset}
+          popupShow={this.props.popupShow}
+          popupHide={this.props.popupHide} />
       </div>
     )
   }
