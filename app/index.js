@@ -8,6 +8,7 @@ import App from './components/App';
 import ProfilesList from './components/ProfilesList'
 import ProfileAdd from './components/ProfileAdd'
 import Client from './components/Client'
+import TaskAdd from './components/TaskAdd'
 
 import './styles/app.global.css';
 
@@ -25,6 +26,7 @@ render(
         <IndexRoute component={ProfilesList}></IndexRoute>
         <Route path="/profiles/add" component={ProfileAdd}></Route>
         <Route path="/profiles/:idx" component={Client}></Route>
+        <Route path="/profiles/:idx/addTask" component={TaskAdd}></Route>
       </Route>
     </Router>
   </Provider>,
