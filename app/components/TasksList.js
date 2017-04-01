@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 import TasksListFilters from './TasksListFilters'
 import Task from './Task'
 import { fileSizeSI } from '../utils/utils'
@@ -7,19 +8,13 @@ import '../styles/TasksList.global.css'
 class TasksList extends React.Component {
   constructor(props) {
     super(props)
-    this.handleAddTask = this.handleAddTask.bind(this)
     this.handleShowFiles = this.handleShowFiles.bind(this)
-  }
-
-  handleAddTask(e) {
-    e.preventDefault()
-    
   }
 
   handleShowFiles(e, idx, task) {
     e.preventDefault()
     const title = 'List of files'
-    let content = (<div>
+    const content = (<div>
       {
         task.additional.file &&
         <table className="table">
@@ -50,7 +45,7 @@ class TasksList extends React.Component {
           &&
           <div className="tasks-list-actions">
             <div className="btn-group" role="group" aria-label="...">
-              <button type="button" className="btn btn-primary" onClick={this.handleAddTask}>Add</button>
+              <Link className="btn btn-primary" to={`/profiles/${this.props.idx}/addTask`}>Add</Link>
             </div>
           </div>
           }
