@@ -1,6 +1,6 @@
 import React from 'react';
 import { hashHistory } from 'react-router'
-import styles from '../styles/ProfileAdd.css'
+import styles from '../styles/ProfileAdd.global.css'
 
 class ProfileAdd extends React.Component {
   constructor(props) {
